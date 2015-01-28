@@ -1,0 +1,12 @@
+= link_to 'Flashcards', root_path
+&nbsp;|&nbsp;
+- if current_user
+  = link_to 'new card', new_card_path
+  &nbsp;|&nbsp;
+  = "#{current_user.username}"
+  &nbsp;|&nbsp;
+  = link_to 'sign out', sign_out_path
+- else
+  = "Guest"
+  &nbsp;|&nbsp;
+  = link_to 'auth', new_session_path
