@@ -44,3 +44,5 @@ gem 'rspec-rails'
 gem 'fabrication'
 gem 'faker'
 
+gem 'rails_12factor'
+
