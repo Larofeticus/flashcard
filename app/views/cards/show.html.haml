@@ -3,21 +3,14 @@
 %p
   %b Question:
   = @card.question
-#response
-  %p
-    %b Response:
-    %input(class="response_text")
-=submit_tag 'show answer', type: 'button', id: 'show_answer'    
-=submit_tag 'try again', type: 'button', id: 'try_again_btn'
-.answer(data-ans="#{@card.answer}")
-  %p
-    %b Answer:
-    = @card.answer
+%p
+  %b Answer:
+  = @card.answer
 %p
   %b Citation:
   = link_to 'Source', @card.citation, target: '_blank'
 %p
-  = link_to 'Next', cards_random_path, id: 'next_btn'
+  
 = link_to 'Edit', edit_card_path(@card) if current_user
 = '|' if current_user
 = link_to 'Back', cards_path

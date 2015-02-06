@@ -1,5 +1,7 @@
-$(document).ready(function() {
-  $('#show_answer').click( function() {
+$(document).ready(function() 
+{
+  $('#show_answer').click( function() 
+  {
     $(this).hide();
 
     console.log('in the house');
@@ -15,6 +17,7 @@ $(document).ready(function() {
     if(response == ans)
     {
       $('#next_btn').show();
+      $('#next_btn').focus();
     }
     else
     {
@@ -23,11 +26,15 @@ $(document).ready(function() {
     }
   });
 
-  $('#try_again_btn').click( function() {
-    $(this).hide();
-    $('.answer').hide();
-    $('#show_answer').show();
-    $('.response_text').prop('value', '');
-    $('.response_text').prop('disabled', false);
-  });
+  $('#try_again_btn').click( 
+    function() 
+    {
+      $(this).hide();
+      $('.answer').hide();
+      $('#show_answer').show();
+      $('.response_text').prop('value', '');
+      $('.response_text').prop('disabled', false);
+      $('.response_text').focus();
+    }
+  );
 });

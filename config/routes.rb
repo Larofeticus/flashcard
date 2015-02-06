@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get '/cards/random' => 'cards#random'
-  resources :cards
+  #get '/cards/random' => 'cards#random'
+  resources :cards do
+    get 'random', on: :collection
+  end
 
   root 'cards#index'
   

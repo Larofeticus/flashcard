@@ -4,7 +4,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+    @cards = Card.all.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /cards/1
@@ -15,8 +15,6 @@ class CardsController < ApplicationController
   # GET /cards/random
   def random
     @card = Card.find(Card.all.pluck(:id).sample)
-    print "card id: #{@card}\n"
-    render :show
   end
 
   # GET /cards/new

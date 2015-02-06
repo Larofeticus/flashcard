@@ -43,6 +43,7 @@ gem 'haml-rails'
 gem 'rspec-rails'
 gem 'fabrication'
 gem 'faker'
+gem 'will_paginate'
 
 gem 'rails_12factor'
 

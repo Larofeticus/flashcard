@@ -13,13 +13,14 @@
   %tbody
     - @cards.each do |card|
       %tr
-        %td= card.question
-        %td= card.answer
-        %td= card.citation
+        %td= card.question.truncate(40)
+        %td= card.answer.truncate(40)
+        %td= link_to 'Source', card.citation, target: '_blank'
         %td= link_to 'Show', card
         %td= link_to 'Edit', edit_card_path(card) if current_user
         %td= link_to 'Destroy', card, method: :delete, data: {confirm: 'Are you sure?' } if current_user
 
 %br
-
+= will_paginate @cards
+%br
 = link_to 'New Card', new_card_path
