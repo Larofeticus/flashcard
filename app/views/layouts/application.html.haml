@@ -9,4 +9,9 @@
   %body>
     = render 'shared/navigation'
     %hr
+    - if flash.present?
+      - flash.each do |k, v|
+        = v
+        %br
+      %hr
     = yield
